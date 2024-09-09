@@ -3,11 +3,17 @@ import React, { useState } from "react";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
+interface Project {
+  title: string;
+  description: string;
+  imageUrl: string;
+  descriptionUnderImage: string;
+}
+
 const FeaturedProjects = () => {
   const [isFeatured, setIsFeatured] = useState(true);
-  const [hoveredItem, setHoveredItem] = useState(null); // State to track hovered item
+  const [hoveredItem, setHoveredItem] = useState<Project | null>(null); // Type for hovered item
 
-  // Sample data for featured projects
   const featuredProjects = [
     {
       title: "Heating Plant",
@@ -85,10 +91,9 @@ const FeaturedProjects = () => {
     },
   ];
 
-  // Determine the image and description to display based on hover state
+
   const displayedImage = hoveredItem?.imageUrl || "/img-111.jpg";
-  const displayedDescription =
-    hoveredItem?.descriptionUnderImage || "Hover over a project to learn more.";
+  const displayedDescription = hoveredItem?.descriptionUnderImage || "Hover over a project to learn more.";
 
   return (
     <div className="shadow-md w-full max-w-[90rem] mx-auto p-6">
