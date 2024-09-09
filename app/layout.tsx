@@ -4,6 +4,8 @@ import "./globals.css";
 import {Providers} from "./providers";
 import {NextUIProvider} from "@nextui-org/react";
 import App from '../app/Components/Navbar/App'
+import Footer from '../app/Components/Footer'
+
 
 
 const geistSans = localFont({
@@ -29,6 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+  <link rel="icon" href="/LogoKhasu.png" sizes="any" />
       <head>
         
       </head>
@@ -39,6 +42,8 @@ export default function RootLayout({
                 <App/>
 
                 {children}
+                <Footer/>
+
                 </NextUIProvider>
 
       </body>

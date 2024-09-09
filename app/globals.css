@@ -81,3 +81,15 @@ body {
   }
 }
 
+/* Custom pagination container style */
+.custom-pagination {
+  @apply absolute bottom-[-20px] left-1/2 transform -translate-x-1/2;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-blue-600; /* Customize the color */
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-blue-800; /* Customize the active color */
+}
