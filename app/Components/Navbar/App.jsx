@@ -166,7 +166,7 @@ const Navbar = () => {
                 transition={{ duration: 0.3 }}
               >
                 {isOpen ? (
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
                 ) : (
                   <Bars2Icon className="h-6 w-6" aria-hidden="true" />
                 )}

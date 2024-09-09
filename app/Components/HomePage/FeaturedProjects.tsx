@@ -1,8 +1,10 @@
 'use client';
+
 import React, { useState } from "react";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
+// Define a type for the project
 interface Project {
   title: string;
   description: string;
@@ -12,8 +14,9 @@ interface Project {
 
 const FeaturedProjects = () => {
   const [isFeatured, setIsFeatured] = useState(true);
-  const [hoveredItem, setHoveredItem] = useState<Project | null>(null); // Type for hovered item
+  const [hoveredItem, setHoveredItem] = useState<Project | null>(null); // State to track hovered item
 
+  // Sample data for featured projects
   const featuredProjects = [
     {
       title: "Heating Plant",
@@ -91,7 +94,10 @@ const FeaturedProjects = () => {
     },
   ];
 
+  // Sample data for services
 
+
+  // Determine the image and description to display based on hover state
   const displayedImage = hoveredItem?.imageUrl || "/img-111.jpg";
   const displayedDescription = hoveredItem?.descriptionUnderImage || "Hover over a project to learn more.";
 

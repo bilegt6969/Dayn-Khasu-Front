@@ -1,7 +1,8 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import React, { useRef } from 'react';
+import SwiperCore, { Swiper as SwiperClass } from 'swiper';
+import React, { useRef, useState } from 'react';
 import { Pagination } from 'swiper/modules';
 // import Swiper and modules styles
 import '../../../app/globals.css'
@@ -10,7 +11,20 @@ import 'swiper/css/pagination';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 
 export default function NewsCarousel() {
-  const swiperRef = useRef(null);
+  // Define a type for your projects
+interface Project {
+  title: string;
+  description: string;
+  imageUrl: string;
+  descriptionUnderImage: string;
+}
+
+
+// Add type annotation for `hoveredItem`
+const [hoveredItem, setHoveredItem] = useState<Project | null>(null);
+const swiperRef = useRef<SwiperClass | null>(null);
+
+
 
   const news = [
     {
@@ -77,7 +91,7 @@ export default function NewsCarousel() {
     <div className="relative mt-16 w-full max-w-[90rem] mx-auto">
       <h2 className="text-4xl font-extrabold text-blue-700 mb-6 text-center">NEWS</h2>
       <Swiper
-        onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        onSwiper={(swiper: any) => { swiperRef.current = swiper; }}
         spaceBetween={20}
         breakpoints={{
           640: { slidesPerView: 1 },
@@ -151,4 +165,5 @@ export default function NewsCarousel() {
       </button>
     </div>
   );
+
 }
